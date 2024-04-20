@@ -11,6 +11,7 @@
 class BFDFileHandler {
     public:
 	explicit BFDFileHandler(std::string_view file_path);
+
 	auto get_architecture_type() const -> std::string;
 	auto get_object_file_size() const -> std::size_t;
 	auto get_all_sections() const -> std::vector<std::string>;
