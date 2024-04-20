@@ -27,6 +27,14 @@ To compile the project all you have to do is run make like so:
 make
 ```
 
+If you are using an editor like me which requires the `compile_commands.json` in order for the intellisense to work properly you can compile the project with
+
+```bash
+make compile-commands
+```
+
+Note: You will need to install the `bear` CLI which is used to output the `compile_commands.json` from a `Makefile`.
+
 ## Usage
 
 ```bash
