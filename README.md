@@ -1,6 +1,6 @@
-# Project Name
+# Object file reader 
 
-A brief description of what the project does and its purpose.
+A CLI utility written in C++ which dumps all the relevant information about an object file (its sections and symbols)
 
 ## Table of Contents
 
@@ -17,16 +17,21 @@ Provide a more detailed introduction to the project. Include information about i
 
 ## Features
 
-- List the main features or functionalities of the project.
-- Bullet points are a good way to summarize each feature concisely.
+- Read an object file and display the contents of it
 
 ## Installation
 
-Describe how to install and set up the project. Include any dependencies and steps required to get the project running on different platforms.
+To compile the project all you have to do is run make like so:
+
+```bash
+make
+```
 
 ## Usage
 
-Provide examples or instructions on how to use the project. Include code snippets or commands to demonstrate typical usage scenarios.
+```bash
+./obj-file-reader <file name>
+```
 
 ## Contributing
 
