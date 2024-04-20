@@ -1,6 +1,6 @@
 #pragma once
 
-#include "bfd_file_descriptor.hpp"
+#include "bfd_file_handler.hpp"
 #include <string_view>
 
 class Reader {
@@ -11,6 +11,6 @@ class Reader {
 	auto object_file_info(void) const -> std::string;
 
     private:
-	BFDFileDescriptor bfd_file_descriptor_;
+	BFDFileHandler bfd_file_handler_;
 	std::string file_info_;
 };

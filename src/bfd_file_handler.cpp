@@ -1,4 +1,4 @@
-#include "bfd_file_descriptor.hpp"
+#include "bfd_file_handler.hpp"
 
 #include <bitset>
 #include <errno.h>
@@ -66,7 +66,7 @@ static auto is_defined_symbol(asymbol* symbol) -> bool
 	return symbol_section != bfd_und_section_ptr and symbol_section != bfd_com_section_ptr;
 }
 
-BFDFileDescriptor::BFDFileDescriptor(std::string_view file_path)
+BFDFileHandler::BFDFileHandler(std::string_view file_path)
     : file_ptr_(nullptr, &close_file)
 {
 	bfd_init();
@@ -86,17 +86,17 @@ BFDFileDescriptor::BFDFileDescriptor(std::string_view file_path)
 	file_ptr_ = std::move(abfd);
 }
 
-auto BFDFileDescriptor::get_architecture_type() const -> std::string
+auto BFDFileHandler::get_architecture_type() const -> std::string
 {
 	return std::string(bfd_printable_name(file_ptr_.get()));
 }
 
-auto BFDFileDescriptor::get_object_file_size() const -> std::size_t
+auto BFDFileHandler::get_object_file_size() const -> std::size_t
 {
 	return bfd_get_file_size(file_ptr_.get());
 }
 
-auto BFDFileDescriptor::get_all_sections() const -> std::vector<std::string>
+auto BFDFileHandler::get_all_sections() const -> std::vector<std::string>
 {
 	auto sections = std::vector<std::string>();
 	bfd_map_over_sections(
@@ -111,7 +111,7 @@ auto BFDFileDescriptor::get_all_sections() const -> std::vector<std::string>
 	return sections;
 }
 
-auto BFDFileDescriptor::get_all_symbols() const -> std::vector<std::string>
+auto BFDFileHandler::get_all_symbols() const -> std::vector<std::string>
 {
 	auto size = bfd_get_symtab_upper_bound(file_ptr_.get());
 	auto symbol_table = std::make_unique<asymbol*[]>(size);
