@@ -12,7 +12,13 @@ A CLI utility written in C++ which dumps all the relevant information about an o
 
 ## Introduction
 
-Provide a more detailed introduction to the project. Include information about its background, motivation, and any relevant context.
+I wrote this utility to learn more about the ELF relocatable object file format, how it works, and wanted to write a potentially useful utility for people who want to inspect such files. There is plenty of work left to do on this project and this is far from done, I will be adding features to it as I see fit.
+
+Todo:
+ - Add a more advanced argument handling with flags and such
+ - Add support for printing out the disassembled function symbol
+ - Add support to list all symbols per section
+ - Possibly think about adding a way to edit the object file
 
 ## Features
 
