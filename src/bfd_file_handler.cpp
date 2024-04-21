@@ -75,10 +75,9 @@ static auto is_defined_symbol(asymbol* symbol) -> bool
 }
 
 BFDFileHandler::BFDFileHandler(std::string_view file_path)
-    : file_ptr_(nullptr, &close_file)
+    : file_ptr_(bfd_openr(file_path.data(), nullptr), &close_file)
 {
-	file_ptr_t abfd(bfd_openr(file_path.data(), nullptr), &close_file);
-	if (abfd == nullptr) {
+	if (file_ptr_ == nullptr) {
 		if (errno == ENOENT) {
 			throw std::runtime_error("Failed opening file with bfd, file does not exist");
 		}
@@ -86,11 +85,9 @@ BFDFileHandler::BFDFileHandler(std::string_view file_path)
 		throw std::runtime_error("Failed opening file with bfd");
 	}
 
-	if (not bfd_check_format(abfd.get(), bfd_object)) {
+	if (not bfd_check_format(file_ptr_.get(), bfd_object)) {
 		throw std::runtime_error("Incorrect file format");
 	}
-
-	file_ptr_ = std::move(abfd);
 }
 
 auto BFDFileHandler::get_architecture_type() const -> std::string
