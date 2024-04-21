@@ -38,7 +38,7 @@ Note: You will need to install the `bear` CLI which is used to output the `compi
 ## Usage
 
 ```bash
-./obj-file-reader <file name>
+./object-reader <file name>
 ```
 
 ## Contributing
