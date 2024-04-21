@@ -8,7 +8,6 @@ A CLI utility written in C++ which dumps all the relevant information about an o
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -40,10 +39,6 @@ Note: You will need to install the `bear` CLI which is used to output the `compi
 ```bash
 ./object-reader <file name>
 ```
-
-## Contributing
-
-Explain how others can contribute to the project. Include guidelines for code contributions, bug reporting, and feature requests.
 
 ## License
 
