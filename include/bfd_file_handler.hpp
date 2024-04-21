@@ -5,8 +5,6 @@
 #include <vector>
 #include <functional>
 
-using bfd = struct bfd;
-
 class BFDFileHandler {
     public:
 	explicit BFDFileHandler(std::string_view file_path);
@@ -17,6 +15,7 @@ class BFDFileHandler {
 	auto get_all_symbols() const -> std::vector<std::string>;
 
     private:	
+	using bfd = struct bfd;
 	using file_ptr_t = std::unique_ptr<bfd, std::function<void(bfd*)>>;
 	file_ptr_t file_ptr_;
 };
