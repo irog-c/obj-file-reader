@@ -77,7 +77,6 @@ static auto is_defined_symbol(asymbol* symbol) -> bool
 BFDFileHandler::BFDFileHandler(std::string_view file_path)
     : file_ptr_(nullptr, &close_file)
 {
-	bfd_init();
 	file_ptr_t abfd(bfd_openr(file_path.data(), nullptr), &close_file);
 	if (abfd == nullptr) {
 		if (errno == ENOENT) {
