@@ -20,6 +20,13 @@ Todo:
  - Add support to list all symbols per section
  - Possibly think about adding a way to edit the object file
 
+Some resources I used for this project:
+ - https://docs.oracle.com/cd/E19120-01/open.solaris/819-0690/6n33n7fcb/index.html
+ - https://ftp.gnu.org/old-gnu/Manuals/bfd-2.9.1/html_node/bfd_toc.html
+ - http://www.skyfree.org/linux/references/ELF_Format.pdf
+ - https://sourceware.org/binutils/binutils-porting-guide.txt
+ - https://github.com/CyberGrandChallenge/binutils/blob/master/binutils/objdump.c
+
 ## Features
 
 - Read an object file and display the contents of it
