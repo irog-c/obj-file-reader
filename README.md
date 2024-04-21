@@ -35,7 +35,7 @@ Some resources I used for this project:
 
 Prerequisites:
 
-You might need to install `binutils
+You might need to install `binutils`
 ```bash
 sudo apt-get install binutils-dev
 ```
