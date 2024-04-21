@@ -16,7 +16,7 @@ $(object_dir)/main.o: $(source_dir)/main.cpp $(include_dir)/reader.hpp | $(objec
 $(object_dir)/reader.o: $(source_dir)/reader.cpp $(include_dir)/reader.hpp $(object_dir)/bfd_file_handler.o | $(object_dir)
 	$(cc) -c $(source_dir)/reader.cpp $(flags) -o $@
 
-$(object_dir)/bfd_file_handler.o: $(source_dir)/bfd_file_handler.cpp $(include_dir)/bfd_file_handler.hpp | $(object_dir)
+$(object_dir)/bfd_file_handler.o: $(source_dir)/bfd_file_handler.cpp $(include_dir)/bfd_file_handler.hpp $(include_dir)/bfd_init.hpp | $(object_dir)
 	$(cc) -c $(source_dir)/bfd_file_handler.cpp $(flags) -o $@
 
 $(object_dir):

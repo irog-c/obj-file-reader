@@ -33,6 +33,13 @@ Some resources I used for this project:
 
 ## Installation
 
+Prerequisites:
+
+You might need to install `binutils
+```bash
+sudo apt-get install binutils-dev
+```
+
 To compile the project all you have to do is run make like so:
 
 ```bash

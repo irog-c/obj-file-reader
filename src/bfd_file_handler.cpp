@@ -1,9 +1,17 @@
 #include "bfd_file_handler.hpp"
+#include "bfd_init.hpp"
 
 #include <bitset>
 #include <errno.h>
 #include <stdexcept>
 #include <string>
+
+static auto close_file(bfd* abfd) -> void
+{
+	if (abfd != nullptr) {
+		bfd_close(abfd);
+	}
+}
 
 static auto get_symbol_type(const flagword flags) -> std::string
 {
