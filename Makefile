@@ -7,6 +7,8 @@ flags = -O2 -Wall -Wextra -std=c++20 -I$(include_dir) -g
 objects = $(object_dir)/main.o $(object_dir)/reader.o $(object_dir)/bfd_file_handler.o
 exec = object-reader
 
+all: $(exec)
+
 $(exec): $(objects) | $(object_dir)
 	$(cc) $(objects) -o $(exec) -lbfd
 

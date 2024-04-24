@@ -4,6 +4,7 @@
 #include <string_view>
 #include <vector>
 #include <functional>
+#include <type_traits>
 
 class BFDFileHandler {
     public:
@@ -19,3 +20,5 @@ class BFDFileHandler {
 	using file_ptr_t = std::unique_ptr<bfd, std::function<void(bfd*)>>;
 	file_ptr_t file_ptr_;
 };
+
+static_assert(not std::is_trivially_destructible_v<BFDFileHandler>, "BFDFileHandler is not trivially destructible");
