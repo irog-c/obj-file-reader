@@ -6,7 +6,8 @@ OUTPUT_OPTION = -MMD -MP -o $@
 SOURCE = $(wildcard src/*.cpp)
 OBJS = $(SOURCE:.cpp=.o)
 DEPS = $(SOURCE:.cpp=.d)
--include ${DEPS}
+
+all: object-reader
 
 object-reader: $(OBJS)
 	$(CXX) -o object-reader $(OBJS) -lbfd
@@ -20,4 +21,6 @@ clean:
 .phony: compile-commands
 compile-commands:
 	bear -- make
+
+-include $(DEPS)
 
