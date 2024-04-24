@@ -1,4 +1,5 @@
 object-reader
-obj/
+src/*.o
+src/*.d
 compile_commands.json
 .cache
