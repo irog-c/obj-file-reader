@@ -1,11 +1,11 @@
-CXX = g++
-INCLUDE_DIR = include
-CXXFLAGS = -O2 -Wall -Wextra -std=c++20 -I$(INCLUDE_DIR)
+CXX           = g++
+INCLUDE_DIR   = include
+CXXFLAGS      = -O2 -Wall -Wextra -std=c++20 -I$(INCLUDE_DIR)
 OUTPUT_OPTION = -MMD -MP -o $@ 
 
 SOURCE = $(wildcard src/*.cpp)
-OBJS = $(SOURCE:.cpp=.o)
-DEPS = $(SOURCE:.cpp=.d)
+OBJS   = $(SOURCE:.cpp=.o)
+DEPS   = $(SOURCE:.cpp=.d)
 
 all: object-reader
 
@@ -20,7 +20,6 @@ clean:
 
 .phony: compile-commands
 compile-commands:
-	bear -- make
-
+	bear --output compile_commands.json --append -- make
 -include $(DEPS)
 
