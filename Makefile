@@ -18,7 +18,7 @@ clean:
 	rm -f $(DEPS)
 	rm -f object-reader
 
-.phony: compile-commands
+.PHONY: compile-commands
 compile-commands:
 	bear --output compile_commands.json --append -- make
 -include $(DEPS)
